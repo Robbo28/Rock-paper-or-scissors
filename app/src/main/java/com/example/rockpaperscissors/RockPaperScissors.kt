@@ -22,4 +22,18 @@ fun main(){
     }
 
     println(computerChoice)
+
+    val winner = when{
+        playerChoice == computerChoice -> "Draw"
+        playerChoice == "Rock" && computerChoice == "Scissors" -> "Player"
+        playerChoice == "Paper" && computerChoice == "Rock" -> "Player"
+        playerChoice == "Scissors" && computerChoice == "Paper" -> "Player"
+        else -> "Computer"
+    }
+
+    when (winner){
+        "Draw" -> println("It was a draw")
+        "Player","Computer" -> println("$winner won")
+        else -> println("Unknown result")
+    }
 }
